@@ -1370,6 +1370,7 @@ body.no-scroll {
         flex-direction: row;
         align-items: center;
         gap: 0;
+        justify-content: space-between;
     }
 
     .hero-content {
@@ -1378,7 +1379,7 @@ body.no-scroll {
     }
 
     .hero-image-wrapper {
-        flex: 0 0 50%;
+        flex: 0 0 45%;
         height: 85vh;
         order: 1;
     }
