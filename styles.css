@@ -1404,10 +1404,7 @@ body.no-scroll {
     }
 
     .el-2 {
-        width: 120px;
-        height: 120px;
-        bottom: 20%;
-        right: -30px;
+        display: none !important;
     }
 
     .glass-card {
