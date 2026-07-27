@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Premium Luxury Jewellery</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles.css?v=25">
+    <!-- About Page CSS -->
+    <link rel="stylesheet" href="about.css?v=5">
+</head>
+<body>
+    <!-- Luxury Loader -->
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">Stackly</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="new-arrivals.html">New Arrivals</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right desktop-only">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="login.html" class="btn btn-secondary nav-btn">Login</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger mobile-only" id="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="collections.html" class="mobile-link">Collections</a></li>
+                <li><a href="new-arrivals.html" class="mobile-link">New Arrivals</a></li>
+                <li><a href="about.html" class="mobile-link active">About</a></li>
+                <li><a href="contact.html" class="mobile-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <div class="mobile-icons">
+                <button class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+            </div>
+            <a href="login.html" class="btn btn-primary full-width">Login</a>
+        </div>
+    </div>
+
+    <main class="about-main">
+        
+        <!-- SECTION 1: CINEMATIC HERO -->
+        <section class="ab-hero-v2">
+            <img src="Images/image_2.webp" alt="Stackly Legacy" class="ab-hero-bg">
+            <div class="ab-hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(109, 31, 47, 0.3), rgba(109, 31, 47, 0.8)); z-index: 1;"></div>
+            <div class="ab-hero-content" data-aos="fade-up" data-aos-duration="1500" style="position: relative; z-index: 2;">
+                <span class="luxury-tag" style="margin-bottom: 2rem; border-color: rgba(255,255,255,0.5); color: white; background: transparent;">The Legacy</span>
+                <h1 class="ab-hero-title">Stackly</h1>
+                <p class="ab-hero-subtitle">Crafting the world's most exquisite heirlooms, seamlessly blending centuries of artistry with breathtaking modern elegance.</p>
+                <p class="ab-hero-subtitle" style="margin-top: 1rem; font-size: 1rem; opacity: 0.8;">Every creation is a testament to our unwavering commitment to perfection and the timeless beauty of fine jewelry.</p>
+                <a href="404.html" class="btn btn-secondary" style="margin-top: 2.5rem;">Explore Our Heritage</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GENESIS (Overlapping Layout) -->
+        <section class="ab-genesis">
+            <div class="container relative-z">
+                <div class="ab-gen-wrapper">
+                    <div class="ab-gen-image-box" data-aos="fade-right" data-aos-duration="1200">
+                        <img src="Images/image_3.webp" alt="The Beginning" class="ab-gen-img">
+                        <div class="ab-gen-gold-frame"></div>
+                    </div>
+                    <div class="ab-gen-content" data-aos="fade-up" data-aos-duration="1200">
+                        <span class="luxury-tag" style="border-color: var(--clr-secondary); color: var(--clr-secondary); margin-bottom: 2rem;">Est. 1995</span>
+                        <h2>Our Genesis</h2>
+                        <div style="width: 60px; height: 1px; background: var(--clr-secondary); margin-bottom: 2rem;"></div>
+                        <p>Born in the vibrant heart of the city in 1995, Stackly began as a solitary dream in a small, candle-lit workshop. The vision was simple yet profoundly ambitious: to redefine luxury by stripping away the superfluous and celebrating the pure, unadulterated beauty of nature's finest elements.</p>
+                        <p>Over the decades, that humble beginning has transformed into a globally recognized symbol of prestige, without ever losing the intimate, artisanal soul that defined our very first creation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: EDITORIAL COLLAGE (Artistry) -->
+        <section class="ab-collage">
+            <div class="container">
+                <div class="ab-collage-header" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 2rem; border-color: var(--clr-secondary); color: var(--clr-secondary); background: transparent;">The Craft</span>
+                    <h2>Artistry Without Compromise.</h2>
+                    <p>Since our founding, Stackly has stood as a beacon of unmatched quality and visionary design. Every piece we create begins with an emotion, sketched by master artisans, and forged in the rarest materials on earth.</p>
+                </div>
+                
+                <div class="ab-artistry-layout">
+                    <div class="ab-art-img-large" data-aos="fade-right" data-aos-duration="1200">
+                        <img src="Images/image_6.webp" alt="Craftsmanship">
+                    </div>
+                    <div class="ab-art-img-small-top" data-aos="fade-down" data-aos-delay="200" data-aos-duration="1200">
+                        <img src="Images/image_1.webp" alt="Details">
+                    </div>
+                    <div class="ab-art-img-small-bottom" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200">
+                        <img src="Images/image_8.webp" alt="Precision">
+                    </div>
+                    
+                    <div class="ab-art-text-box" data-aos="fade-left" data-aos-delay="300" data-aos-duration="1200">
+                        <h3>A Curated Legacy</h3>
+                        <p>We do not just create jewellery. We curate legacies that transcend time. Each collection is a testament to the pursuit of absolute perfection.</p>
+                        <a href="404.html" class="btn btn-secondary">Discover The Art</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE PHILOSOPHY (Core Values Grid) -->
+        <section class="ab-philosophy">
+            <div class="container" data-aos="fade-up">
+                <span class="luxury-tag" style="margin-bottom: 2rem; border-color: var(--clr-secondary); color: var(--clr-secondary); background: transparent;">Values</span>
+                <h2>Our Guiding Philosophy</h2>
+                <div class="ab-phil-grid">
+                    <div class="ab-phil-card">
+                        <i class="fa-regular fa-gem"></i>
+                        <h3>Unrivaled Purity</h3>
+                        <p>We source only the top 1% of diamonds globally. Each stone must pass our rigorous internal grading for cut, clarity, and fire, exceeding standard certification norms.</p>
+                    </div>
+                    <div class="ab-phil-card">
+                        <i class="fa-solid fa-hammer"></i>
+                        <h3>Master Craftsmanship</h3>
+                        <p>Our ateliers house generations of savoir-faire. True luxury cannot be mass-produced; it must be coaxed to life by the careful hands of master artisans.</p>
+                    </div>
+                    <div class="ab-phil-card">
+                        <i class="fa-solid fa-infinity"></i>
+                        <h3>Timeless Design</h3>
+                        <p>We ignore fleeting trends to focus on absolute proportion and enduring elegance. An Stackly piece is designed to be as breathtaking in a century as it is today.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: TIMELINE (The Master's Journey) -->
+        <section class="ab-timeline">
+            <div class="container">
+                <div class="ab-timeline-header" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 2rem; border-color: var(--clr-secondary); color: var(--clr-secondary); background: transparent;">Process</span>
+                    <h2>The Master's Journey</h2>
+                    <div style="width: 60px; height: 1px; background: var(--clr-secondary); margin: 0 auto;"></div>
+                </div>
+                
+                <div class="ab-timeline-wrap">
+                    <!-- Item 1: Image Left, Text Right -->
+                    <div class="ab-time-item">
+                        <div class="ab-time-img" data-aos="fade-right" data-aos-duration="1200">
+                            <img src="Images/image_7.webp" alt="The Dream">
+                        </div>
+                        <div class="ab-time-content" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1200">
+                            <h3>01. The Dream</h3>
+                            <p>Every masterpiece begins as a fleeting thought. We draw inspiration from the natural world, capturing ephemeral beauty in our minds before committing it to design.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2: Image Right, Text Left -->
+                    <div class="ab-time-item ab-time-reverse">
+                        <div class="ab-time-img" data-aos="fade-left" data-aos-duration="1200">
+                            <img src="Images/image_5.webp" alt="The Sketch">
+                        </div>
+                        <div class="ab-time-content" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
+                            <h3>02. The Sketch</h3>
+                            <p>Translating emotion into form. Our master designers put pen to paper, meticulously outlining the proportions, angles, and curves that will define the piece.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3: Image Left, Text Right -->
+                    <div class="ab-time-item">
+                        <div class="ab-time-img" data-aos="fade-right" data-aos-duration="1200">
+                            <img src="Images/image_4.webp" alt="The Craft">
+                        </div>
+                        <div class="ab-time-content" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1200">
+                            <h3>03. The Craft</h3>
+                            <p>Forging precious metals and setting the rarest stones. Decades of traditional savoir-faire meet cutting-edge precision to assemble the perfect structure.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4: Image Right, Text Left -->
+                    <div class="ab-time-item ab-time-reverse">
+                        <div class="ab-time-img" data-aos="fade-left" data-aos-duration="1200">
+                            <img src="Images/image_1.webp" alt="The Legacy">
+                        </div>
+                        <div class="ab-time-content" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1200">
+                            <h3>04. The Legacy</h3>
+                            <p>A masterpiece born to endure. The final creation is polished to absolute perfection, ready to be cherished, worn, and passed down for generations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: SUSTAINABILITY (Parallax) -->
+        <section class="ab-sustain">
+            <div class="ab-sustain-overlay"></div>
+            <div class="ab-sustain-content" data-aos="zoom-in" data-aos-duration="1500">
+                <span class="luxury-tag" style="margin-bottom: 2rem; border-color: rgba(255,255,255,0.3); color: white; background: transparent;">Sustainability</span>
+                <h2>Ethical Brilliance</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8;">True luxury means operating with total respect for humanity and the earth. We are strictly committed to the Kimberley Process, ensuring 100% of our diamonds are conflict-free. Furthermore, we pioneer the use of recycled precious metals, significantly reducing our ecological footprint without compromising purity.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: THE PROMISE -->
+        <section class="ab-pure-promise">
+            <div class="ab-pure-inner" data-aos="fade-up" data-aos-duration="1200">
+                <h2>Every piece tells a story.<br>Let yours begin today.</h2>
+                <p>Celebrate life's milestones with jewellery crafted to last generations. From conflict-free certified diamonds to hallmarked pure gold, we promise absolute perfection in every detail.</p>
+                <div class="ab-pure-actions">
+                    <a href="404.html" class="btn btn-primary">Explore Collections</a>
+                    <a href="404.html" class="btn btn-secondary">Book Appointment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: 0; display: inline-block;"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+                    <p>Crafting timeless elegance and preserving the art of luxury jewellery since 1995.</p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="404.html" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="404.html">Bridal</a></li>
+                        <li><a href="404.html">Diamonds</a></li>
+                        <li><a href="404.html">Gold</a></li>
+                        <li><a href="404.html">Platinum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Exchange</a></li>
+                        <li><a href="404.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly Luxury Jewellery. All rights reserved.</p>
+                <button id="back-to-top" aria-label="Back to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,607 @@
+/* ==========================================================================
+   AURA LUXURY ABOUT PAGE - AWARD WINNING REDESIGN
+   ========================================================================== */
+
+/* 1. HERO SECTION (Cinematic Parallax) */
+.ab-hero-v2 {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--clr-primary);
+    padding-top: 100px; /* clear header */
+    padding-bottom: 40px;
+}
+@media(min-width: 768px) {
+    .ab-hero-v2 {
+        min-height: 800px;
+    }
+}
+
+.ab-hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transform: scale(1.05); /* for slow zoom effect if animated */
+}
+
+.ab-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--clr-white);
+    padding: 0 2rem;
+}
+@media(min-width: 768px) {
+    .ab-hero-content {
+        margin-bottom: 15vh;
+    }
+}
+
+.ab-hero-tag {
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--clr-secondary);
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.ab-hero-title {
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-family: var(--font-heading);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--clr-white);
+}
+
+.ab-hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+}
+
+/* 2. EDITORIAL COLLAGE (Artistry) */
+.ab-collage {
+    padding: 3rem 0 5rem;
+    background: var(--clr-white);
+    overflow: hidden;
+}
+@media(min-width: 768px) {
+    .ab-collage { padding: 4rem 0 8rem; }
+}
+.ab-collage-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+@media(min-width: 768px) {
+    .ab-collage-header { margin: 0 auto 6rem; }
+}
+.ab-collage-header h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+.ab-collage-header p {
+    font-size: 1.2rem;
+    color: var(--clr-primary);
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+.ab-artistry-layout {
+    position: relative;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media(min-width: 1024px) {
+    .ab-artistry-layout {
+        height: 800px;
+        display: block; 
+    }
+    
+    .ab-art-img-large {
+        position: absolute;
+        top: 0; left: 0;
+        width: 45%; height: 700px;
+        z-index: 1;
+    }
+    .ab-art-img-large img {
+        width: 100%; height: 100%; object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .ab-art-img-large:hover img {
+        transform: scale(1.05);
+    }
+    
+    .ab-art-img-small-top {
+        position: absolute;
+        top: 50px; right: 10%;
+        width: 30%; height: 400px;
+        z-index: 2;
+        border: 1px solid var(--clr-secondary);
+        padding: 1rem;
+        background: var(--clr-white);
+    }
+    .ab-art-img-small-top img {
+        width: 100%; height: 100%; object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .ab-art-img-small-top:hover img {
+        transform: scale(1.05);
+    }
+    
+    .ab-art-img-small-bottom {
+        position: absolute;
+        bottom: 0; left: 35%;
+        width: 25%; height: 350px;
+        z-index: 3;
+        border: 1px solid var(--clr-secondary);
+        padding: 1rem;
+        background: var(--clr-white);
+    }
+    .ab-art-img-small-bottom img {
+        width: 100%; height: 100%; object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .ab-art-img-small-bottom:hover img {
+        transform: scale(1.05);
+    }
+    
+    .ab-art-text-box {
+        position: absolute;
+        bottom: 100px; right: 5%;
+        width: 35%;
+        background: var(--clr-primary);
+        color: var(--clr-white);
+        padding: 3rem;
+        z-index: 4;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .ab-art-text-box h3 {
+        color: var(--clr-secondary);
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .ab-art-text-box p {
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: var(--clr-white);
+    }
+}
+
+/* 3. TIMELINE (The Master's Journey) */
+.ab-timeline {
+    padding: 5rem 0;
+    background: var(--clr-white);
+}
+@media(min-width: 768px) {
+    .ab-timeline { padding: 10rem 0; }
+}
+.ab-timeline-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+@media(min-width: 768px) {
+    .ab-timeline-header { margin-bottom: 6rem; }
+}
+.ab-timeline-header h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: var(--clr-primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+.ab-timeline-wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    position: relative;
+    padding: 0 2rem;
+}
+@media(min-width: 768px) {
+    .ab-timeline-wrap::before {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0; left: 50%;
+        width: 1px;
+        background: linear-gradient(to bottom, transparent, var(--clr-secondary), transparent);
+        transform: translateX(-50%);
+    }
+}
+
+.ab-time-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+@media(min-width: 768px) {
+    .ab-time-item {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .ab-time-reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.ab-time-img {
+    width: 100%;
+    position: relative;
+}
+@media(min-width: 768px) {
+    .ab-time-img {
+        width: 45%;
+    }
+}
+.ab-time-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.ab-time-img:hover img {
+    transform: scale(1.05);
+}
+@media(min-width: 768px) {
+    .ab-time-img img { height: 400px; }
+}
+
+.ab-time-content {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+}
+@media(min-width: 768px) {
+    .ab-time-content {
+        width: 45%;
+        text-align: left;
+        background: transparent;
+        color: var(--clr-primary);
+        padding: 0 2rem;
+    }
+    .ab-time-reverse .ab-time-content {
+        text-align: right;
+    }
+}
+.ab-time-content h3 {
+    font-size: 2rem;
+    color: var(--clr-secondary);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+.ab-time-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* 4. THE PROMISE (Pure Elegance) */
+.ab-pure-promise {
+    background: var(--clr-primary);
+    padding: 4rem 1.5rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+@media(min-width: 768px) {
+    .ab-pure-promise { padding: 8rem 2rem; }
+}
+
+.ab-pure-inner {
+    border: 1px solid rgba(200, 164, 93, 0.5); /* subtle gold border */
+    padding: 3rem 1.5rem;
+    max-width: 900px;
+    width: 100%;
+    background: var(--clr-primary);
+    position: relative;
+}
+
+.ab-pure-inner::before {
+    content: '';
+    position: absolute;
+    top: 10px; right: 10px; bottom: 10px; left: 10px;
+    border: 1px solid rgba(200, 164, 93, 0.2); /* inner gold border */
+    pointer-events: none;
+}
+
+@media(min-width: 768px) {
+    .ab-pure-inner {
+        padding: 8rem 4rem;
+    }
+}
+
+.ab-pure-inner h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    color: var(--clr-secondary);
+    font-family: var(--font-heading);
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-weight: 300;
+}
+
+.ab-pure-inner p {
+    font-size: 1.2rem;
+    color: var(--clr-white);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+.ab-pure-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.ab-pure-actions .btn-primary {
+    background: var(--clr-secondary);
+    color: var(--clr-primary);
+    border: none;
+}
+.ab-pure-actions .btn-primary:hover {
+    background: var(--clr-white);
+    color: var(--clr-primary);
+}
+
+.ab-pure-actions .btn-secondary {
+    border-color: var(--clr-secondary);
+    color: var(--clr-secondary);
+}
+.ab-pure-actions .btn-secondary:hover {
+    background: var(--clr-secondary);
+    color: var(--clr-primary);
+}
+
+/* 5. GENESIS (Overlapping Layout) */
+.ab-genesis {
+    padding: 5rem 0;
+    background: var(--clr-white);
+    position: relative;
+}
+@media(min-width: 768px) {
+    .ab-genesis { padding: 10rem 0; }
+}
+.ab-gen-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media(min-width: 1024px) {
+    .ab-gen-wrapper {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.ab-gen-image-box {
+    position: relative;
+    width: 100%;
+    padding: 2rem;
+    z-index: 1;
+}
+@media(min-width: 1024px) {
+    .ab-gen-image-box {
+        width: 55%;
+    }
+}
+.ab-gen-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.ab-gen-image-box:hover .ab-gen-img {
+    transform: scale(1.05);
+}
+@media(min-width: 1024px) {
+    .ab-gen-img { height: 600px; }
+}
+.ab-gen-gold-frame {
+    position: absolute;
+    top: 0; left: 0; right: 4rem; bottom: 4rem;
+    border: 1px solid var(--clr-secondary);
+    z-index: -1;
+}
+@media(min-width: 1024px) {
+    .ab-gen-gold-frame {
+        top: -2rem; left: -2rem; right: 2rem; bottom: 2rem;
+    }
+}
+
+.ab-gen-content {
+    width: 100%;
+    background: var(--clr-primary);
+    padding: 2.5rem 1.5rem;
+    color: var(--clr-white);
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 30px 60px rgba(109, 31, 47, 0.2);
+    margin-top: -3rem;
+}
+@media(min-width: 1024px) {
+    .ab-gen-content {
+        width: 55%;
+        margin-top: 0;
+        margin-left: -10%;
+        padding: 5rem;
+    }
+}
+.ab-gen-content h2 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    color: var(--clr-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-family: var(--font-heading);
+}
+.ab-gen-content p {
+    font-size: 1.1rem;
+    color: var(--clr-white);
+    opacity: 0.9;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* 6. PHILOSOPHY (Values Grid) - PREMIUM REDESIGN */
+.ab-philosophy {
+    padding: 3rem 1.5rem;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+@media(min-width: 768px) {
+    .ab-philosophy { padding: 10rem 2rem; }
+}
+.ab-philosophy::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 150vw; height: 150vw;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, rgba(200, 164, 93, 0.08) 0%, transparent 50%);
+    z-index: 0;
+    pointer-events: none;
+}
+.ab-philosophy .container {
+    position: relative;
+    z-index: 1;
+}
+.ab-philosophy h2 {
+    color: var(--clr-secondary);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    margin-bottom: 2rem;
+    font-family: var(--font-heading);
+}
+@media(min-width: 768px) {
+    .ab-philosophy h2 { margin-bottom: 4rem; }
+}
+.ab-phil-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media(min-width: 768px) {
+    .ab-phil-grid { 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+.ab-phil-card {
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+@media(min-width: 768px) {
+    .ab-phil-card { padding: 3.5rem 2.5rem; }
+}
+.ab-phil-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--clr-secondary), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+.ab-phil-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(200, 164, 93, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(200, 164, 93, 0.1);
+}
+.ab-phil-card:hover::before {
+    transform: scaleX(1);
+}
+.ab-phil-card i {
+    font-size: 3.5rem;
+    color: var(--clr-secondary);
+    margin-bottom: 2rem;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), text-shadow 0.5s ease;
+    display: inline-block;
+    text-shadow: 0 5px 15px rgba(200, 164, 93, 0.2);
+}
+.ab-phil-card:hover i { 
+    transform: scale(1.15) translateY(-8px);
+    text-shadow: 0 15px 30px rgba(200, 164, 93, 0.5);
+}
+.ab-phil-card h3 {
+    font-size: 1.8rem;
+    color: var(--clr-secondary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+.ab-phil-card p {
+    font-size: 1.1rem;
+    color: var(--clr-white);
+    opacity: 0.9;
+    line-height: 1.8;
+}
+
+/* 7. SUSTAINABILITY (Parallax) */
+.ab-sustain {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    background-image: url('Images/image_47.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.ab-sustain-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(109, 31, 47, 0.85);
+}
+.ab-sustain-content {
+    position: relative;
+    z-index: 2;
+    color: var(--clr-white);
+    padding: 0 2rem;
+    max-width: 800px;
+    width: 100%;
+}
+.ab-sustain-content h2 {
+    color: var(--clr-secondary);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}

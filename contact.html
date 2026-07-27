@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stackly Luxury</title>
+    <meta name="description" content="Get in touch with Stackly Luxury Jewellery. Book an appointment, find our boutiques, or speak with a concierge.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css?v=26">
+    <link rel="stylesheet" href="contact.css">
+    <style>
+        html { scroll-padding-top: 120px !important; }
+        input, select, textarea { scroll-margin-top: 120px !important; }
+    </style>
+</head>
+<body>
+    <!-- Luxury Loader -->
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">Stackly</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="new-arrivals.html">New Arrivals</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right desktop-only">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="login.html" class="btn btn-secondary nav-btn">Login</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger mobile-only" id="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="collections.html" class="mobile-link">Collections</a></li>
+                <li><a href="new-arrivals.html" class="mobile-link">New Arrivals</a></li>
+                <li><a href="about.html" class="mobile-link">About</a></li>
+                <li><a href="contact.html" class="mobile-link active">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <div class="mobile-icons">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+            <a href="login.html" class="btn btn-primary full-width">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="contact-hero">
+            <div class="contact-hero-bg">
+                <img src="Images/image_27.webp" alt="Stackly Boutiques">
+            </div>
+            <div class="contact-hero-overlay"></div>
+            <div class="contact-hero-content" data-aos="zoom-in" data-aos-duration="1500">
+                <h1 class="contact-hero-title">Concierge</h1>
+                <p class="contact-hero-subtitle">AT YOUR SERVICE</p>
+            </div>
+        </section>
+
+        <!-- 2. CONTACT INFO GRID -->
+        <section class="contact-info-sec">
+            <div class="container text-center" style="margin-bottom: 4rem;" data-aos="fade-up">
+                <span class="luxury-tag" style="margin-bottom: 1.5rem; background: var(--clr-primary); color: var(--clr-secondary); border: 1px solid var(--clr-secondary);">Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div style="width: 60px; height: 1px; background: var(--clr-secondary); margin: 1.5rem auto;"></div>
+                <p style="max-width: 600px; margin: 0 auto; color: var(--clr-primary); opacity: 0.8; font-size: 1.1rem; line-height: 1.8;">
+                    Whether you wish to arrange a private viewing, inquire about a bespoke commission, or seek expert guidance on selecting the perfect heirloom, our dedicated concierges are at your absolute disposal.
+                </p>
+            </div>
+            <div class="contact-info-grid">
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Speak with a diamond expert.</p>
+                    <a href="404.html">+1 (800) 123-4567</a>
+                </div>
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-wrapper">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>For inquiries and bespoke requests.</p>
+                    <a href="404.html">info@stackly.com</a>
+                </div>
+                <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-wrapper">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Headquarters</h3>
+                    <p>Visit our flagship design studio.</p>
+                    <p>123 Luxury Avenue, NY 10001</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. THE BOUTIQUE EXPERIENCE -->
+        <section class="boutique-exp">
+            <div class="boutique-wrap">
+                <img src="Images/image_26.webp" alt="The Stackly Experience" class="boutique-img" data-aos="fade-right" data-aos-duration="1200">
+                <div class="boutique-content" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1200">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Sanctuary</span>
+                    <h2>The In-Store Experience</h2>
+                    <p>Step into a world of absolute elegance. Our stores are designed as private sanctuaries where you can explore our collections in comfort and intimacy.</p>
+                    <p>Whether you are seeking the perfect engagement ring or commissioning a bespoke high-jewellery masterpiece, our dedicated ambassadors are here to guide you.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. BOOKING FORM -->
+        <section class="booking-sec" id="appointment">
+            <div class="booking-container" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="booking-header">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Reservation</span>
+                    <h2>Book A Private Appointment</h2>
+                    <div style="width: 60px; height: 1px; background: var(--clr-secondary); margin: 1rem auto 2rem;"></div>
+                    <p>Reserve a private viewing session with one of our master gemologists.</p>
+                </div>
+                <form class="booking-form" action="404.html">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="boutique">Select Store</label>
+                        <select id="boutique" required>
+                            <option value="">Choose a location...</option>
+                            <option value="ny">New York - 5th Ave</option>
+                            <option value="paris">Paris - Place Vendôme</option>
+                            <option value="london">London - Bond Street</option>
+                            <option value="salem">Salem - Omalur Main Road</option>
+                            <option value="virtual">Virtual Consultation</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Request (Optional)</label>
+                        <textarea id="message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background: var(--clr-secondary); color: var(--clr-primary); border: none;">Request Appointment</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 5. GLOBAL BOUTIQUES -->
+        <section class="locations-sec">
+            <div class="container" data-aos="fade-up">
+                <div class="text-center">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Global Presence</span>
+                    <h2>Our Flagship Stores</h2>
+                </div>
+                <div style="width: 60px; height: 1px; background: var(--clr-secondary); margin: 0 auto 4rem;"></div>
+                
+                <div class="loc-grid">
+                    <div class="loc-card">
+                        <h3>New York</h3>
+                        <div class="loc-divider"></div>
+                        <p>123 5th Avenue, NY 10001<br>+1 (212) 555-0198<br>Mon - Sat: 10am - 7pm</p>
+                    </div>
+                    <div class="loc-card">
+                        <h3>Paris</h3>
+                        <div class="loc-divider"></div>
+                        <p>15 Place Vendôme, 75001<br>+33 1 42 61 23 45<br>Mon - Sat: 10am - 7pm</p>
+                    </div>
+                    <div class="loc-card">
+                        <h3>London</h3>
+                        <div class="loc-divider"></div>
+                        <p>100 New Bond St, W1S 1SP<br>+44 20 7499 1234<br>Mon - Sat: 10am - 6pm</p>
+                    </div>
+                    <div class="loc-card">
+                        <h3>Salem</h3>
+                        <div class="loc-divider"></div>
+                        <p>Omalur Main Road, Salem 636004<br>+91 427 123 4567<br>Mon - Sun: 10am - 8pm</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FAQ SECTION -->
+        <section class="faq-sec">
+            <div class="container text-center">
+                <span class="luxury-tag" style="margin-bottom: 1.5rem;" data-aos="fade-down">Support</span>
+                <h2 data-aos="fade-down">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <details class="faq-item" name="faq-accordion" data-aos="fade-up" data-aos-delay="100">
+                        <summary class="faq-q">
+                            <span>Are your diamonds ethically sourced?</span>
+                            <i class="fa-solid fa-chevron-down icon-expand"></i>
+                        </summary>
+                        <div class="faq-a">
+                            <p>Yes. We strictly adhere to the Kimberley Process and only source diamonds from ethical, conflict-free mines. We maintain a zero-tolerance policy toward unethically mined stones.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" name="faq-accordion" data-aos="fade-up" data-aos-delay="200">
+                        <summary class="faq-q">
+                            <span>Do you offer bespoke or custom designs?</span>
+                            <i class="fa-solid fa-chevron-down icon-expand"></i>
+                        </summary>
+                        <div class="faq-a">
+                            <p>Absolutely. Our master artisans are available for private commissions. Please book a Virtual Consultation or visit one of our flagship boutiques to begin the process.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item" name="faq-accordion" data-aos="fade-up" data-aos-delay="300">
+                        <summary class="faq-q">
+                            <span>What is your shipping policy?</span>
+                            <i class="fa-solid fa-chevron-down icon-expand"></i>
+                        </summary>
+                        <div class="faq-a">
+                            <p>We offer complimentary, fully insured international shipping on all high-jewellery pieces. Deliveries are made via secure courier and require an adult signature.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. CTA / NEWSLETTER -->
+        <section class="contact-cta">
+            <div class="contact-cta-inner" data-aos="zoom-in">
+                <span class="luxury-tag" style="margin-bottom: 1.5rem; border-color: rgba(255,255,255,0.3); color: white; background: transparent;">Newsletter</span>
+                <h2>Join The Inner Circle</h2>
+                <p>Subscribe to receive exclusive invitations, early collection previews, and editorial insights directly to your inbox.</p>
+                <form class="membership-form-modern" action="404.html" style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <style>
+                        .dark-placeholder::placeholder {
+                            color: rgba(109, 31, 47, 0.6) !important;
+                        }
+                    </style>
+                    <input type="email" class="dark-placeholder" placeholder="Your Email Address" required style="padding: 1rem; width: 100%; max-width: 300px; border: 1px solid var(--clr-primary); background: transparent; color: var(--clr-primary);">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: 0; display: inline-block;"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+                    <p>Crafting timeless elegance and preserving the art of luxury jewellery since 1995.</p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="404.html" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="404.html">Bridal</a></li>
+                        <li><a href="404.html">Diamonds</a></li>
+                        <li><a href="404.html">Gold</a></li>
+                        <li><a href="404.html">Platinum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Exchange</a></li>
+                        <li><a href="404.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly Luxury Jewellery. All rights reserved.</p>
+                <button id="back-to-top" aria-label="Back to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+    </script>
+    <!-- Custom JS -->
+    <script src="script.js?v=6"></script>
+</body>
+</html>

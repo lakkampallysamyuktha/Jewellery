@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Luxury Jewellery</title>
+    <meta name="description" content="Discover our world-class premium luxury jewellery collections. Crafted with excellence since 1995.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css?v=17">
+</head>
+<body>
+    <!-- Luxury Loader -->
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">Stackly</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="new-arrivals.html">New Arrivals</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav> 
+            
+            <div class="header-right desktop-only">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-shopping-bag"></i></a>
+                <a href="login.html" class="btn btn-secondary nav-btn">Login</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger mobile-only" id="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="mobile-link active">Home</a></li>
+                <li><a href="collections.html" class="mobile-link">Collections</a></li>
+                <li><a href="new-arrivals.html" class="mobile-link">New Arrivals</a></li>
+                <li><a href="about.html" class="mobile-link">About</a></li>
+                <li><a href="contact.html" class="mobile-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <div class="mobile-icons">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-shopping-bag"></i></a>
+            </div>
+            <a href="login.html" class="btn btn-primary full-width">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 1: Luxury Editorial Hero -->
+        <section class="hero">
+            <div class="hero-bg">
+                <div class="hero-gradient"></div>
+                <div class="hero-texture"></div>
+            </div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="luxury-tag">Crafted With Excellence Since 1995</span>
+                    <h1 class="hero-heading">Celebrate Every Precious Moment With Timeless Jewellery</h1>
+                    <p class="hero-desc">Discover our heritage of unparalleled craftsmanship. Each piece is a masterpiece, designed to reflect your inner elegance and tell a story that lasts a lifetime.</p>
+                    <div class="hero-buttons">
+                        <a href="collections.html" class="btn btn-primary">Explore Collections</a>
+                        <a href="404.html" class="btn btn-secondary">Book Appointment</a>
+                    </div>
+                    
+                    <div class="trust-badges">
+                        <div class="badge">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>BIS Hallmarked Gold</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fa-regular fa-gem"></i>
+                            <span>Certified Diamonds</span>
+                        </div>
+                        <div class="badge">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <span>Lifetime Exchange</span>
+                        </div>
+                    </div>
+                    
+                    <div class="gold-divider"></div>
+                    
+                    <div class="customer-rating">
+                        <div class="stars">★★★★★</div>
+                        <p>100K+ Happy Customers</p>
+                    </div>
+                </div>
+                
+                <div class="hero-image-wrapper">
+                    <div class="image-mask hover-swap" onclick="window.location.href='404.html'" style="cursor: pointer;">
+                        <img src="Images/image_36.webp" alt="Bridal model wearing premium jewellery" class="hero-img primary-img">
+                        <img src="Images/image_37.webp" alt="Bridal model alternate" class="hero-img secondary-img">
+                    </div>
+                    <!-- Floating Glass Cards & Elements -->
+                    <div class="glass-card trending-card" onclick="window.location.href='404.html'" style="cursor: pointer;">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        <span>Trending Collection</span>
+                    </div>
+                    <img src="Images/image_13.webp" alt="Floating Ring" class="floating-element el-1 hover-scale" onclick="window.location.href='404.html'">
+                    <img src="Images/image_14.webp" alt="Floating Diamond" class="floating-element el-2 hover-scale" onclick="window.location.href='404.html'">
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Featured Collections -->
+        <section class="featured-collections section-padding">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 3rem;" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Discover</span>
+                    <h2 class="section-title">Curated For You</h2>
+                    <p style="color: var(--clr-text); font-size: 1.1rem; margin-top: 0.5rem;">Explore our masterfully crafted collections</p>
+                </div>
+                
+                <!-- Desktop Gallery / Mobile Swiper -->
+                <div class="collections-gallery swiper collections-swiper">
+                    <div class="swiper-wrapper gallery-grid">
+                        <div class="swiper-slide gallery-item item-1" data-aos="fade-up" data-aos-delay="100">
+                            <div class="gallery-img-container">
+                                <img src="Images/image_23.webp" alt="Bridal Collection" class="primary-img">
+                                <img src="Images/image_43.webp" alt="Bridal Collection Details" class="hover-img">
+                                <div class="gallery-overlay">
+                                    <h3>Bridal</h3>
+                                    <a href="404.html" class="btn btn-secondary btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide gallery-item item-2" data-aos="fade-up" data-aos-delay="200">
+                            <div class="gallery-img-container">
+                                <img src="Images/image_8.webp" alt="Diamond Collection" class="primary-img">
+                                <img src="Images/image_25.webp" alt="Diamond Collection Details" class="hover-img">
+                                <div class="gallery-overlay">
+                                    <h3>Diamond</h3>
+                                    <a href="404.html" class="btn btn-secondary btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide gallery-item item-3" data-aos="fade-up" data-aos-delay="300">
+                            <div class="gallery-img-container">
+                                <img src="Images/image_4.webp" alt="Gold Collection" class="primary-img">
+                                <img src="Images/image_15.webp" alt="Gold Collection Details" class="hover-img">
+                                <div class="gallery-overlay">
+                                    <h3>Gold</h3>
+                                    <a href="404.html" class="btn btn-secondary btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide gallery-item item-4" data-aos="fade-up" data-aos-delay="400">
+                            <div class="gallery-img-container">
+                                <img src="Images/image_46.webp" alt="Everyday Collection" class="primary-img">
+                                <img src="Images/image_1.webp" alt="Everyday Collection Details" class="hover-img">
+                                <div class="gallery-overlay">
+                                    <h3>Everyday</h3>
+                                    <a href="404.html" class="btn btn-secondary btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide gallery-item item-5" data-aos="fade-up" data-aos-delay="500">
+                            <div class="gallery-img-container">
+                                <img src="Images/image_5.webp" alt="Platinum Collection" class="primary-img">
+                                <img src="Images/image_23.webp" alt="Platinum Collection Details" class="hover-img">
+                                <div class="gallery-overlay">
+                                    <h3>Platinum</h3>
+                                    <a href="404.html" class="btn btn-secondary btn-small">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Swiper Pagination (Mobile Only) -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The Art of Craftsmanship -->
+        <section class="craftsmanship section-padding dark-theme">
+            <div class="container">
+                <div class="craft-split">
+                    <div class="craft-image" data-aos="fade-right">
+                        <img src="Images/image_40.webp" alt="Diamond setting craftsmanship">
+                        <div class="craft-overlay"></div>
+                    </div>
+                    <div class="craft-content" data-aos="fade-left" data-aos-delay="200">
+                        <span class="luxury-tag" style="margin-bottom: 2rem; border-color: rgba(255,255,255,0.3); color: white; background: transparent;">Behind The Scenes</span>
+                        <h2 class="section-title text-white">The Art of Craftsmanship</h2>
+                        <div class="timeline">
+                            <svg class="timeline-line" viewBox="0 0 10 1000" preserveAspectRatio="none">
+                                <path d="M 5 0 L 5 1000" />
+                            </svg>
+                            
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Sketch</h4>
+                                <p>Every masterpiece begins with a visionary drawing.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Design</h4>
+                                <p>Translating concepts into precise 3D models.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Gold Casting</h4>
+                                <p>Pouring pure luxury into master moulds.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Diamond Selection</h4>
+                                <p>Hand-picking flawless stones for brilliance.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Stone Setting</h4>
+                                <p>Meticulous placement by master setters.</p>
+                            </div>
+                            <div class="timeline-step">
+                                <div class="step-dot"></div>
+                                <h4>Hand Finishing</h4>
+                                <p>Polished to perfection for ultimate shine.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Signature Jewellery Showcase -->
+        <section class="signature-showcase section-padding">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 4rem;" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Icons</span>
+                    <h2 class="section-title">Signature Masterpieces</h2>
+                    <p style="color: var(--clr-text); font-size: 1.1rem; margin-top: 0.5rem;">Discover our most celebrated and iconic creations</p>
+                </div>
+                
+                <div class="accordion-gallery">
+                    <div class="accordion-item" style="background-image: url('Images/image_45.webp');" data-aos="fade-up" data-aos-delay="100">
+                        <div class="accordion-content">
+                            <span class="luxury-tag">The Royal Heritage</span>
+                            <h3>Imperial Polki Necklace</h3>
+                            <div class="accordion-hidden">
+                                <p>An exquisite masterpiece that revives the grandeur of royal eras. Adorned with uncut diamonds and rich emeralds, crafted for the modern queen.</p>
+                                <p class="price-range">Starting from $4,500</p>
+                            </div>
+                            <a href="404.html" class="btn btn-primary" style="margin-top: 1rem;">Explore</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-image: url('Images/image_40.webp');" data-aos="fade-up" data-aos-delay="200">
+                        <div class="accordion-content">
+                            <span class="luxury-tag">Modern Minimalist</span>
+                            <h3>Eternity Diamond Ring</h3>
+                            <div class="accordion-hidden">
+                                <p>A flawless circle of brilliance. The Eternity collection features D-color diamonds set in pure platinum, symbolizing an unbreakable bond.</p>
+                                <p class="price-range">Starting from $1,200</p>
+                            </div>
+                            <a href="404.html" class="btn btn-primary" style="margin-top: 1rem;">Explore</a>
+                        </div>
+                    </div>
+                    <div class="accordion-item" style="background-image: url('Images/image_35.webp');" data-aos="fade-up" data-aos-delay="300">
+                        <div class="accordion-content">
+                            <span class="luxury-tag">Timeless Classics</span>
+                            <h3>Luminous Pearl Drop</h3>
+                            <div class="accordion-hidden">
+                                <p>Handpicked South Sea pearls descending from a cluster of brilliant-cut diamonds. Pure sophistication and elegance.</p>
+                                <p class="price-range">Starting from $2,800</p>
+                            </div>
+                            <a href="404.html" class="btn btn-primary" style="margin-top: 1rem;">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Shop by Occasion -->
+        <section class="occasions section-padding">
+            <div class="container">
+                <div class="section-header text-center" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem; display: inline-block;">Occasions</span>
+                    <h2 class="section-title text-center">Moments Turned Into Memories</h2>
+                    <p class="section-subtitle text-center">Discover the perfect piece for every chapter of your life.</p>
+                </div>
+                
+                <div class="arch-grid">
+                    <div class="arch-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="arch-image" style="position: relative;">
+                            <img src="Images/image_38.webp" alt="Wedding" class="primary-img">
+                            <img src="Images/image_44.webp" alt="Wedding Detail" class="hover-img">
+                        </div>
+                        <div class="arch-content">
+                            <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">The Wedding Day</h3>
+                            <p>Begin your forever with bridal jewellery that radiates elegance.</p>
+                            <div class="gold-divider-small centered"></div>
+                            <a href="404.html" class="btn btn-secondary">Explore</a>
+                        </div>
+                    </div>
+                    <div class="arch-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="arch-image" style="position: relative;">
+                            <img src="Images/image_39.webp" alt="Anniversary" class="primary-img">
+                            <img src="Images/image_35.webp" alt="Anniversary Detail" class="hover-img">
+                        </div>
+                        <div class="arch-content">
+                            <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Anniversary</h3>
+                            <p>Honor the years together with timeless diamonds that sparkle.</p>
+                            <div class="gold-divider-small centered"></div>
+                            <a href="404.html" class="btn btn-secondary">Explore</a>
+                        </div>
+                    </div>
+                    <div class="arch-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="arch-image" style="position: relative;">
+                            <img src="Images/image_42.webp" alt="Festival" class="primary-img">
+                            <img src="Images/image_19.webp" alt="Festival Detail" class="hover-img">
+                        </div>
+                        <div class="arch-content">
+                            <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 0.5rem;">Festive Grandeur</h3>
+                            <p>Embrace the spirit of joy with vibrant, intricately designed gold.</p>
+                            <div class="gold-divider-small centered"></div>
+                            <a href="404.html" class="btn btn-secondary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: Why Choose Us -->
+        <section class="why-us section-padding">
+            <div class="why-us-bg"></div>
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 4rem;">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem; border-color: rgba(255,255,255,0.3); color: white; background: transparent;">Assurance</span>
+                    <h2 class="section-title text-white">Why Families Trust Our Jewellery</h2>
+                    <div class="gold-divider-small centered"></div>
+                    <p class="text-white" style="opacity: 0.8; font-family: var(--font-heading); font-size: var(--fs-sub); font-style: italic;">A legacy of excellence since 1995</p>
+                </div>
+                
+                <div class="trust-grid">
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-regular fa-gem"></i>
+                        </div>
+                        <h4 class="text-white">Certified Diamonds</h4>
+                        <p>Ethically sourced and independently graded for maximum brilliance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
+                        <h4 class="text-white">BIS Hallmarked</h4>
+                        <p>100% purity guaranteed on all our premium gold collections.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h4 class="text-white">Secure Payments</h4>
+                        <p>Safe, encrypted, and fully protected transactions every time.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h4 class="text-white">Free Shipping</h4>
+                        <p>Fully insured, complimentary delivery right to your doorstep.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <h4 class="text-white">Expert Craftsmanship</h4>
+                        <p>Handcrafted to perfection by generations of master artisans.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon-wrapper">
+                            <i class="fa-solid fa-rotate-left"></i>
+                        </div>
+                        <h4 class="text-white">Lifetime Exchange</h4>
+                        <p>Upgrade or exchange your jewellery effortlessly at any time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Luxury Boutique Experience -->
+        <section class="boutique section-padding">
+            <div class="container">
+                <div class="bento-grid">
+                    <div class="bento-main" data-aos="fade-right">
+                        <img src="Images/image_3.webp" alt="Luxury Boutique Interior" class="bento-img">
+                        <div class="bento-overlay">
+                            <h2 class="section-title text-white">An Exclusive Boutique Experience</h2>
+                            <p class="text-white">Step into a world of elegance. Enjoy personalized attention from our expert stylists.</p>
+                        </div>
+                    </div>
+                    <div class="bento-side" data-aos="fade-left">
+                        <div class="bento-card dark">
+                            <i class="fa-regular fa-calendar icon-large"></i>
+                            <h4>Private Consultation</h4>
+                            <p>Book a dedicated stylist for your bespoke journey.</p>
+                            <a href="404.html" class="btn btn-secondary text-white" style="margin-top: 1.5rem; border-color: white;">Book Appointment</a>
+                        </div>
+                        <div class="bento-card light">
+                            <div class="stars" style="color: var(--clr-primary); font-size: 1.5rem;">★★★★★</div>
+                            <h3 style="color: var(--clr-primary); font-size: 3rem; margin: 10px 0;">4.9</h3>
+                            <p style="color: var(--clr-primary); font-weight: 500;">Store Rating & Reviews</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: Jewellery Style Guide -->
+        <section class="style-guide">
+            <div class="container">
+                <div class="section-header text-center" style="margin-top: 5rem; margin-bottom: 4rem;" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem;">Editorial Lookbook</span>
+                    <h2 class="section-title">Style Every Moment Beautifully</h2>
+                    <div class="gold-divider-small centered"></div>
+                    <p class="section-subtitle">Curated looks for your extraordinary life</p>
+                </div>
+                
+                <div class="editorial-row">
+                    <div class="editorial-image shadow-premium" data-aos="fade-right">
+                        <img src="Images/image_38.webp" alt="Cocktail Party Look">
+                    </div>
+                    <div class="editorial-content editorial-card" data-aos="fade-left">
+                        <span class="luxury-tag">The Evening Edit</span>
+                        <h3 class="section-title" style="margin-top: 1.5rem;">Cocktail Party Elegance</h3>
+                        <p class="editorial-text">Make a statement with bold diamond drops and a signature cocktail ring. Keep the neckline bare to let the jewels take center stage and capture every glimmer of light.</p>
+                        <div class="gold-divider-small" style="margin: 2rem 0;"></div>
+                        <div class="matching-collection">
+                            <i class="fa-regular fa-gem"></i>
+                            <div>
+                                <h4>Matching Collection</h4>
+                                <p>The Starlight Series</p>
+                            </div>
+                        </div>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 1.5rem;">Explore Style</a>
+                    </div>
+                </div>
+
+                <div class="editorial-row reversed" style="margin-top: 6rem;">
+                    <div class="editorial-image shadow-premium" data-aos="fade-left">
+                        <img src="Images/image_42.webp" alt="Office Look">
+                    </div>
+                    <div class="editorial-content editorial-card" data-aos="fade-right">
+                        <span class="luxury-tag">Everyday Grace</span>
+                        <h3 class="section-title" style="margin-top: 1.5rem;">The Office Look</h3>
+                        <p class="editorial-text">Subtle, sophisticated, and striking. Opt for minimalist platinum studs and a delicate tennis bracelet for a commanding presence that transitions effortlessly from day to night.</p>
+                        <div class="gold-divider-small" style="margin: 2rem 0;"></div>
+                        <div class="matching-collection">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <div>
+                                <h4>Matching Collection</h4>
+                                <p>The Minimalist</p>
+                            </div>
+                        </div>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 1.5rem;">Explore Style</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: Customer Stories -->
+        <section class="stories glass-stories section-padding" style="background-image: url('Images/image_37.webp');">
+            <div class="glass-overlay"></div>
+            <div class="container relative-z">
+                <div class="section-header text-center" style="margin-bottom: 4rem;" data-aos="fade-up">
+                    <span class="luxury-tag" style="margin-bottom: 1.5rem; border-color: rgba(255,255,255,0.3); color: white; background: transparent;">Testimonials</span>
+                    <h2 class="section-title text-white">Stories of Love & Luxury</h2>
+                </div>
+                
+                <div class="glass-grid">
+                    <div class="glass-review-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"Finding the perfect engagement ring was seamless. The private consultation made us feel incredibly special, and the ring is absolutely breathtaking."</p>
+                        <div class="reviewer-info">
+                            <h4>Eleanor & James</h4>
+                            <p>Purchased: The Eternity Collection</p>
+                            <p class="date">October 2023</p>
+                        </div>
+                    </div>
+                    <div class="glass-review-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-solid fa-quote-left quote-icon"></i>
+                        <div class="stars">★★★★★</div>
+                        <p class="review-text">"The craftsmanship of my bespoke wedding necklace is beyond words. It truly felt like I was wearing a piece of art on my big day."</p>
+                        <div class="reviewer-info">
+                            <h4>Sophia R.</h4>
+                            <p>Purchased: Bespoke Bridal</p>
+                            <p class="date">August 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: Exclusive Membership -->
+        <section class="membership-split">
+            <div class="split-left" style="background-image: url('Images/image_45.webp');" data-aos="fade-right">
+            </div>
+            <div class="split-right dark-theme" data-aos="fade-left">
+                <div class="split-content">
+                    <span class="luxury-tag">VIP Access</span>
+                    <h2 class="section-title text-white">Become Part Of Our Luxury Circle</h2>
+                    <p class="text-white subtitle">Join an exclusive world of privileges, private events, and bespoke services.</p>
+                    
+                    <ul class="member-benefits-inline">
+                        <li><i class="fa-regular fa-gem"></i> Early Collection Access</li>
+                        <li><i class="fa-solid fa-gift"></i> Birthday Rewards</li>
+                    </ul>
+                    
+                    <form class="membership-form-modern">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Join The Circle</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 11: Luxury Final CTA -->
+        <section class="final-cta">
+            <div class="cta-image-wrapper">
+                <img src="Images/image_41.webp" alt="Boutique Luxury" class="cta-bg">
+                <div class="cta-overlay"></div>
+            </div>
+            
+            <div class="cta-content text-center" data-aos="fade-up">
+                <h2 class="section-title text-white">Your Forever Jewellery Journey Begins Here</h2>
+                <p class="text-white">Discover the masterpiece waiting for you.</p>
+                
+                <div class="cta-actions">
+                    <a href="404.html" class="btn btn-primary">Explore Collections</a>
+                    <a href="404.html" class="btn btn-secondary text-white border-white">Book Appointment</a>
+                </div>
+                
+                <div class="gold-divider-small centered"></div>
+                
+                <div style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                    <div class="badge text-white">
+                        <i class="fa-solid fa-certificate"></i>
+                        <span>BIS Hallmarked</span>
+                    </div>
+                    <div class="badge text-white">
+                        <i class="fa-regular fa-gem"></i>
+                        <span>Certified Diamonds</span>
+                    </div>
+                    <div class="badge text-white">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Lifetime Exchange</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: 0; display: inline-block;"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+                    <p>Crafting timeless elegance and preserving the art of luxury jewellery since 1995.</p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="404.html" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="404.html">Bridal</a></li>
+                        <li><a href="404.html">Diamonds</a></li>
+                        <li><a href="404.html">Gold</a></li>
+                        <li><a href="404.html">Platinum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="404.html">Contact Us</a></li>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Exchange</a></li>
+                        <li><a href="404.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly Luxury Jewellery. All rights reserved.</p>
+                <button id="back-to-top" aria-label="Back to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50,
+        });
+    </script>
+    <!-- Custom JS -->
+    <script src="script.js?v=6"></script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard – Jewellry Elegance</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #6D1F2F; /* Burgundy */
+      --secondary: #C8A45D; /* Gold */
+      --primary-rgb: 109, 31, 47;
+      --secondary-rgb: 200, 164, 93;
+      --bg: #fdfbf7;
+      --bg-rgb: 253, 251, 247;
+      --text: #333333;
+      --sidebar-w: 260px;
+      --topbar-h: 68px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; color: var(--primary); }
+    a { color: inherit; text-decoration: none; }
+    ::-webkit-scrollbar { width: 5px; height: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(var(--primary-rgb),0.3); border-radius: 10px; }
+
+    /* ─── SIDEBAR & OVERLAY ─── */
+    .sidebar-overlay {
+      display: none; position: fixed; inset: 0; z-index: 190;
+      background: rgba(0,0,0,0.2); backdrop-filter: blur(4px);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .sidebar {
+      width: var(--sidebar-w);
+      height: 100vh;
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 200;
+      background: #ffffff;
+      border-right: 1px solid rgba(var(--primary-rgb),0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, width 0.3s ease;
+      overflow: hidden;
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-bottom: 1px solid rgba(109,31,47,0.05); flex-shrink: 0; text-decoration: none; color: var(--primary); }
+    .static-logo {
+      width: 140px; height: 140px; object-fit: contain; border-radius: 8px;
+      margin-top: -30px; margin-bottom: -30px;
+    }
+    .close-sidebar-btn {
+      display: none; background: rgba(109,31,47,0.05); border: none;
+      color: var(--primary); padding: 6px; border-radius: 8px; cursor: pointer;
+      margin-left: auto; transition: background 0.2s;
+    }
+    .close-sidebar-btn:hover { background: rgba(109,31,47,0.1); }
+    .viewer-badge { background: rgba(200,164,93,0.15); color: var(--secondary); font-size: 0.6rem; font-weight: 700; letter-spacing: 1.2px; padding: 3px 9px; border-radius: 50px; text-transform: uppercase; white-space: nowrap; border: 1px solid rgba(200,164,93,0.3); }
+    
+    .sidebar-nav { flex: 1; padding: 12px 0; overflow-y: auto; overflow-x: hidden; }
+    .nav-section-label {
+      display: block; padding: 10px 22px 4px; font-size: 0.68rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; color: rgba(109,31,47,0.4); white-space: nowrap;
+    }
+    .nav-link {
+      display: flex; align-items: center; gap: 13px;
+      padding: 12px 18px; margin: 2px 10px;
+      border-radius: 12px; cursor: pointer;
+      font-size: 0.95rem; font-weight: 600;
+      color: rgba(51,51,51,0.7);
+      transition: all 0.2s ease; white-space: nowrap;
+      border-left: 3px solid transparent; text-decoration: none;
+    }
+    .nav-link:hover {
+      background: rgba(200,164,93,0.1);
+      color: var(--primary); border-left-color: rgba(200,164,93,0.4);
+    }
+    .nav-link.active {
+      background: rgba(109,31,47,0.05);
+      color: var(--primary); border-left-color: var(--primary);
+    }
+    .nav-link i { font-size: 21px; flex-shrink: 0; width: 21px; text-align: center; }
+    .nav-divider { height: 1px; background: rgba(109,31,47,0.06); margin: 10px 22px; }
+    
+    .sidebar-footer {
+      padding: 16px 18px; border-top: 1px solid rgba(109,31,47,0.06);
+      display: flex; align-items: center; gap: 12px; flex-shrink: 0;
+    }
+    .user-ava {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      display: flex; align-items: center; justify-content: center; color: white;
+      font-size: 0.82rem; font-weight: 700; flex-shrink: 0;
+    }
+    .user-info { overflow: hidden; }
+    .user-info .uname { font-size: 0.9rem; font-weight: 700; color: var(--primary); white-space: nowrap; }
+    .user-info .uemail { font-size: 0.75rem; color: rgba(51,51,51,0.6); white-space: nowrap; }
+
+    /* ─── MAIN ─── */
+    .main-wrap { margin-left: var(--sidebar-w); flex: 1; min-height: 100vh; display: flex; flex-direction: column; transition: margin-left 0.3s ease; }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100; height: var(--topbar-h);
+      background: rgba(253, 251, 247, 0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(109,31,47,0.1);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px; flex-shrink: 0;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 14px; }
+    .menu-toggle {
+      display: none; background: none; border: none; color: var(--primary); cursor: pointer;
+      padding: 5px; border-radius: 8px; margin-left: -8px; font-size: 24px;
+    }
+    .mobile-logo { display: none; align-items: center; gap: 8px; }
+    .mobile-logo .static-logo { width: 90px; height: 90px; margin-top: -20px; margin-bottom: -20px; }
+    .topbar-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+    .topbar-right { display: flex; align-items: center; gap: 14px; }
+    
+    .search-box {
+      display: flex; align-items: center; gap: 9px;
+      background: #ffffff; border: 1px solid rgba(109,31,47,0.1);
+      border-radius: 50px; padding: 9px 16px; transition: border-color 0.2s;
+    }
+    .search-box:focus-within { border-color: var(--secondary); }
+    .search-box i { font-size: 18px; color: rgba(109,31,47,0.4); }
+    .search-box input { background: none; border: none; outline: none; color: var(--text); font-family: inherit; font-size: 0.9rem; width: 170px; }
+    
+    .notif-btn {
+      position: relative; background: #ffffff;
+      border: 1px solid rgba(109,31,47,0.1); border-radius: 50%;
+      width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+      cursor: pointer; color: var(--primary);
+    }
+    .notif-dot { position: absolute; top: 5px; right: 5px; width: 9px; height: 9px; border-radius: 50%; background: var(--secondary); border: 2px solid var(--bg); }
+    .topbar-ava {
+      width: 38px; height: 38px; border-radius: 50%; color: white;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; font-weight: 700; cursor: pointer; text-decoration: none;
+    }
+
+    /* ─── SPA SECTIONS ─── */
+    .page-body { padding: 28px 28px 48px; flex: 1; }
+    .spa-section { display: none; animation: fadeIn 0.4s ease forwards; }
+    .spa-section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ─── COMPONENT CLASSES ─── */
+    .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .btn-primary { background: var(--primary); color: #fff; padding: 10px 20px; border-radius: 50px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; }
+    .btn-primary:hover { background: var(--secondary); box-shadow: 0 4px 15px rgba(200,164,93,0.4); }
+    
+    .glass-panel {
+      background: #ffffff; border: 1px solid rgba(109,31,47,0.05);
+      border-radius: 16px; padding: 25px; box-shadow: 0 8px 30px rgba(0,0,0,0.03);
+      margin-bottom: 30px;
+    }
+    
+    /* ─── CONTENT GRIDS ─── */
+    .content-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .content-card {
+      background: #ffffff; border: 1px solid rgba(109,31,47,0.05);
+      border-radius: 14px; padding: 14px; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .content-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(109,31,47,0.08); }
+    .c-img { width: 100%; aspect-ratio: 1; border-radius: 10px; object-fit: cover; margin-bottom: 12px; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .content-card:hover .c-img { transform: scale(1.05); }
+    .c-title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; color: var(--primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .c-sub { font-size: 0.85rem; color: rgba(51,51,51,0.6); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .content-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); border-right: none; height: 100%; bottom: 0; }
+      .sidebar.open { transform: translateX(0); box-shadow: 4px 0 24px rgba(0,0,0,0.1); }
+      .sidebar-overlay.open { display: block; opacity: 1; }
+      .sidebar-logo { padding: 10px 12px; gap: 8px; }
+      .close-sidebar-btn { display: block; }
+      .menu-toggle { display: block; }
+      .main-wrap { margin-left: 0; width: 100%; max-width: 100vw; min-width: 0; }
+      .topbar-title { font-size: 1.1rem; }
+      .topbar { padding: 0 16px; }
+      .page-body { padding: 20px 16px; overflow-x: hidden; width: 100%; min-width: 0; }
+      .search-box { display: none; }
+      .content-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .content-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── TOGGLE SWITCH ─── */
+    .toggle-switch { width: 40px; height: 22px; background: rgba(0,0,0,0.15); border-radius: 50px; position: relative; cursor: pointer; transition: background 0.3s; }
+    .toggle-switch.on { background: var(--secondary); }
+    .toggle-circle { width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: left 0.3s; }
+    .toggle-switch.on .toggle-circle { left: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <div class="static-logo" onclick="window.location.href='index.html'" style="cursor: pointer; background-color: var(--primary); -webkit-mask: url('logo-removebg-preview.webp') no-repeat left center; mask: url('logo-removebg-preview.webp') no-repeat left center; -webkit-mask-size: contain; mask-size: contain; width: 220px; height: 55px;" title="Jewellry"></div>
+      <span class="viewer-badge">CUSTOMER</span>
+      <button class="close-sidebar-btn" onclick="toggleSidebar()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <span class="nav-section-label">MENU</span>
+      <a class="nav-link active" onclick="showSection('dashboard', 'Dashboard', this)">
+        <i class="fa-solid fa-table-columns"></i><span>Dashboard</span>
+      </a>
+      <a class="nav-link" onclick="showSection('collections', 'My Collections', this)">
+        <i class="fa-regular fa-gem"></i><span>My Collections</span>
+      </a>
+      <a class="nav-link" onclick="showSection('wishlist', 'Wishlist', this)">
+        <i class="fa-regular fa-heart"></i><span>Wishlist</span>
+      </a>
+      <a class="nav-link" onclick="showSection('orders', 'Order History', this)">
+        <i class="fa-solid fa-receipt"></i><span>Order History</span>
+      </a>
+      <a class="nav-link" onclick="showSection('discover', 'Discover New', this)">
+        <i class="fa-regular fa-compass"></i><span>Discover New</span>
+      </a>
+
+      <div class="nav-divider"></div>
+      <span class="nav-section-label">ACCOUNT</span>
+
+      <a class="nav-link" onclick="showSection('settings', 'Settings', this)">
+        <i class="fa-solid fa-gear"></i><span>Settings</span>
+      </a>
+      <a href="login.html" class="nav-link">
+        <i class="fa-solid fa-right-from-bracket"></i><span>Logout</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-ava" id="sidebar-ava">JD</div>
+      <div class="user-info">
+        <div class="uname" id="sidebar-uname">John Doe</div>
+        <div class="uemail" id="sidebar-uemail">john@example.com</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main-wrap">
+
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu-toggle" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="mobile-logo">
+          <div class="static-logo" style="background-color: var(--primary); -webkit-mask: url('logo-removebg-preview.webp') no-repeat left center; mask: url('logo-removebg-preview.webp') no-repeat left center; -webkit-mask-size: contain; mask-size: contain; width: 180px; height: 45px;" title="Jewellry"></div>
+        </a>
+        <span class="topbar-title" id="topbar-title-text">Dashboard</span>
+      </div>
+      <div class="topbar-right">
+        <form class="search-box" onsubmit="event.preventDefault(); window.location.href='404.html';">
+          <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer; display: flex; align-items: center; outline: none; color: inherit;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" placeholder="Search jewelry..." required>
+        </form>
+        <button class="notif-btn" onclick="window.location.href='404.html'">
+          <i class="fa-regular fa-bell"></i><span class="notif-dot"></span>
+        </button>
+        <a href="404.html" class="topbar-ava" id="topbar-ava" title="Profile">JD</a>
+      </div>
+    </header>
+
+    <main class="page-body">
+
+      <!-- ================= DASHBOARD ================= -->
+      <section id="sec-dashboard" class="spa-section active">
+        <div class="glass-panel" style="background: linear-gradient(135deg, rgba(200,164,93,0.1), rgba(255,255,255,1)); display: flex; justify-content: space-between; align-items: center; border-left: 4px solid var(--secondary);">
+          <div>
+            <h2 id="greeting-name">Good Evening, John! 👋</h2>
+            <p style="color:rgba(51,51,51,0.7); margin-top:5px; font-family: 'Manrope', sans-serif;">Welcome back to your luxury curation. You have 3 items in your wishlist waiting for you.</p>
+          </div>
+          <button class="btn-primary" style="padding: 10px 20px;" onclick="window.location.href='404.html'">View Wishlist</button>
+        </div>
+        
+        <div class="sec-head"><h2>Curated For You</h2></div>
+        <div class="content-grid" style="margin-bottom: 30px;">
+          <!-- Using placeholder images or unspash since original image paths were not valid jewelry -->
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_10.webp" class="c-img" alt="Ring">
+            <div class="c-title">Diamond Eternity Ring</div>
+            <div class="c-sub">Bridal Collection • $2,450</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_32.webp" class="c-img" alt="Necklace">
+            <div class="c-title">Sapphire Pendant</div>
+            <div class="c-sub">Oceanic Series • $1,200</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_31.webp" class="c-img" alt="Bracelet">
+            <div class="c-title">Gold Chain Bracelet</div>
+            <div class="c-sub">Essentials • $850</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_28.webp" class="c-img" alt="Earrings">
+            <div class="c-title">Pearl Drop Earrings</div>
+            <div class="c-sub">Vintage Edit • $600</div>
+          </div>
+        </div>
+
+        <div class="sec-head"><h2>Recent Activity</h2></div>
+        <div class="glass-panel" style="padding: 0; overflow-x: auto;">
+            <table style="width: 100%; min-width: 380px; border-collapse: collapse; text-align: left;">
+                <tr style="border-bottom: 1px solid rgba(109,31,47,0.05);">
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Item</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Action</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Date</th>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(109,31,47,0.05);">
+                    <td style="padding: 15px; font-weight: 600;">Sapphire Pendant</td>
+                    <td style="padding: 15px; color: #34d399;">Added to Wishlist</td>
+                    <td style="padding: 15px; color: gray;">Today</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(109,31,47,0.05);">
+                    <td style="padding: 15px; font-weight: 600;">Diamond Eternity Ring</td>
+                    <td style="padding: 15px; color: var(--secondary);">Viewed</td>
+                    <td style="padding: 15px; color: gray;">Yesterday</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; font-weight: 600;">Rose Gold Watch</td>
+                    <td style="padding: 15px; color: var(--primary);">Purchased</td>
+                    <td style="padding: 15px; color: gray;">Oct 12, 2023</td>
+                </tr>
+            </table>
+        </div>
+      </section>
+
+      <!-- ================= MY COLLECTIONS ================= -->
+      <section id="sec-collections" class="spa-section">
+        <div class="sec-head"><h2>My Collections</h2><button class="btn-primary" style="padding: 6px 16px; font-size: 0.9rem;" onclick="window.location.href='404.html'">+ New Collection</button></div>
+        <div class="content-grid">
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_10.webp" class="c-img" alt="Bridal">
+            <div class="c-title">The Bridal Suite</div>
+            <div class="c-sub">12 Items • Private</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_34.webp" class="c-img" alt="Everyday">
+            <div class="c-title">Everyday Essentials</div>
+            <div class="c-sub">5 Items • Public</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_31.webp" class="c-img" alt="Gifts">
+            <div class="c-title">Gift Ideas</div>
+            <div class="c-sub">8 Items • Private</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= WISHLIST ================= -->
+      <section id="sec-wishlist" class="spa-section">
+        <div class="sec-head"><h2>Wishlist</h2></div>
+        <div class="content-grid">
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <div style="position: relative;">
+                <img src="Images/image_28.webp" class="c-img" alt="Earrings">
+                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);"><i class="fa-solid fa-heart" style="font-size: 18px;"></i></div>
+            </div>
+            <div class="c-title">Pearl Drop Earrings</div>
+            <div class="c-sub" style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
+                <span style="font-weight: 700; color: #333;">$600</span>
+                <span style="color: var(--secondary); font-size: 0.8rem; font-weight: 600;">Add to Cart</span>
+            </div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <div style="position: relative;">
+                <img src="Images/image_10.webp" class="c-img" alt="Ring">
+                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);"><i class="fa-solid fa-heart" style="font-size: 18px;"></i></div>
+            </div>
+            <div class="c-title">Diamond Eternity Ring</div>
+            <div class="c-sub" style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
+                <span style="font-weight: 700; color: #333;">$2,450</span>
+                <span style="color: var(--secondary); font-size: 0.8rem; font-weight: 600;">Add to Cart</span>
+            </div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <div style="position: relative;">
+                <img src="Images/image_32.webp" class="c-img" alt="Necklace">
+                <div style="position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.9); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary);"><i class="fa-solid fa-heart" style="font-size: 18px;"></i></div>
+            </div>
+            <div class="c-title">Sapphire Pendant</div>
+            <div class="c-sub" style="display: flex; justify-content: space-between; align-items: center; margin-top: 5px;">
+                <span style="font-weight: 700; color: #333;">$1,200</span>
+                <span style="color: var(--secondary); font-size: 0.8rem; font-weight: 600;">Add to Cart</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= ORDER HISTORY ================= -->
+      <section id="sec-orders" class="spa-section">
+        <div class="sec-head"><h2>Order History</h2></div>
+        <div class="glass-panel" style="padding: 0; overflow-x: auto;">
+            <table style="width: 100%; min-width: 600px; border-collapse: collapse; text-align: left;">
+                <tr style="border-bottom: 1px solid rgba(109,31,47,0.05); background: rgba(109,31,47,0.02);">
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Order ID</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Items</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Date</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Status</th>
+                    <th style="padding: 15px; color: var(--primary); font-size: 0.9rem;">Total</th>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(109,31,47,0.05);">
+                    <td style="padding: 15px; font-weight: 600; color: #333;">#ORD-7729</td>
+                    <td style="padding: 15px; display: flex; align-items: center; gap: 10px;">
+                        <img src="Images/image_30.webp" alt="Item" style="width: 40px; height: 40px; border-radius: 8px; object-fit: cover;">
+                        <div><div style="font-weight: 600;">Gold Chain Necklace</div><div style="font-size: 0.8rem; color: gray;">Qty: 1</div></div>
+                    </td>
+                    <td style="padding: 15px; color: gray;">Oct 12, 2023</td>
+                    <td style="padding: 15px;"><span style="background: rgba(52,211,153,0.2); color: #059669; padding: 4px 10px; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">Delivered</span></td>
+                    <td style="padding: 15px; font-weight: 600;">$450.00</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; font-weight: 600; color: #333;">#ORD-7610</td>
+                    <td style="padding: 15px; display: flex; align-items: center; gap: 10px;">
+                        <img src="Images/image_33.webp" alt="Item" style="width: 40px; height: 40px; border-radius: 8px; object-fit: cover;">
+                        <div><div style="font-weight: 600;">Gold Chain Bracelet</div><div style="font-size: 0.8rem; color: gray;">Qty: 2</div></div>
+                    </td>
+                    <td style="padding: 15px; color: gray;">Sep 28, 2023</td>
+                    <td style="padding: 15px;"><span style="background: rgba(52,211,153,0.2); color: #059669; padding: 4px 10px; border-radius: 50px; font-size: 0.8rem; font-weight: 600;">Delivered</span></td>
+                    <td style="padding: 15px; font-weight: 600;">$1,700.00</td>
+                </tr>
+            </table>
+        </div>
+      </section>
+
+      <!-- ================= DISCOVER NEW ================= -->
+      <section id="sec-discover" class="spa-section">
+        <div class="sec-head"><h2>Discover New Arrivals</h2></div>
+        
+        <div class="glass-panel" style="padding: 0; overflow: hidden; position: relative; margin-bottom: 30px;">
+            <img src="Images/image_29.webp" style="width: 100%; height: 300px; object-fit: cover; display: block;" alt="New Collection">
+            <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(253, 251, 247, 0.9), transparent); display: flex; flex-direction: column; justify-content: center; padding: 40px;">
+                <h3 style="font-size: 2rem; color: var(--primary); margin-bottom: 10px; font-family: 'Playfair Display', serif;">The Spring Elegance Collection</h3>
+                <p style="color: rgba(51,51,51,0.8); max-width: 400px; margin-bottom: 20px;">Discover our latest selection of hand-crafted artisan jewelry, featuring rare gemstones and timeless designs.</p>
+                <button class="btn-primary" style="align-self: flex-start; padding: 10px 25px;" onclick="window.location.href='404.html'">Shop the Collection</button>
+            </div>
+        </div>
+
+        <div class="content-grid">
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_10.webp" class="c-img" alt="Ring">
+            <div class="c-title">Diamond Eternity Ring</div>
+            <div class="c-sub">New Arrival • $2,450</div>
+          </div>
+          <div class="content-card" onclick="window.location.href='404.html'">
+            <img src="Images/image_32.webp" class="c-img" alt="Necklace">
+            <div class="c-title">Sapphire Pendant</div>
+            <div class="c-sub">New Arrival • $1,200</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SETTINGS ================= -->
+      <section id="sec-settings" class="spa-section">
+        <div class="sec-head"><h2>Account Settings</h2></div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="glass-panel" style="margin-bottom: 0;">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid rgba(109,31,47,0.1); padding-bottom: 10px;">Personal Information</h3>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-size: 0.85rem; color: gray; margin-bottom: 5px;">Full Name</label>
+                    <input type="text" id="settings-name" value="John Doe" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(109,31,47,0.1); background: #fdfbf7; font-family: inherit;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 0.85rem; color: gray; margin-bottom: 5px;">Email Address</label>
+                    <input type="email" id="settings-email" value="john@example.com" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid rgba(109,31,47,0.1); background: #fdfbf7; font-family: inherit;">
+                </div>
+                <button class="btn-primary" onclick="window.location.href='404.html'">Save Changes</button>
+            </div>
+
+            <div class="glass-panel" style="margin-bottom: 0;">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem; border-bottom: 1px solid rgba(109,31,47,0.1); padding-bottom: 10px;">Security & Preferences</h3>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid rgba(109,31,47,0.05);">
+                    <div>
+                        <div style="font-weight: 600;">Email Notifications</div>
+                        <div style="font-size: 0.8rem; color: gray;">Receive updates on orders and offers.</div>
+                    </div>
+                    <div class="toggle-switch" onclick="this.classList.toggle('on')">
+                        <div class="toggle-circle"></div>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div>
+                        <div style="font-weight: 600;">Change Password</div>
+                        <div style="font-size: 0.8rem; color: gray;">Update your account password securely.</div>
+                    </div>
+                    <button style="background: none; border: 1px solid var(--primary); color: var(--primary); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-weight: 600;" onclick="window.location.href='404.html'">Update</button>
+                </div>
+            </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    function showSection(sectionId, title, clickedElement) {
+        document.querySelectorAll('.spa-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById('sec-' + sectionId).classList.add('active');
+        document.getElementById('topbar-title-text').innerText = title;
+        if (clickedElement) {
+            document.querySelectorAll('.sidebar-nav .nav-link').forEach(link => link.classList.remove('active'));
+            clickedElement.classList.add('active');
+        }
+        if(window.innerWidth <= 768) toggleSidebar(false);
+    }
+
+    function toggleSidebar(forceState) {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.querySelector('.sidebar-overlay');
+        const menuIcon = document.querySelector('.menu-toggle i');
+        const isOpen = sidebar.classList.contains('open');
+        
+        if(forceState === false || isOpen) {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            if (menuIcon) menuIcon.className = 'fa-solid fa-bars';
+            document.body.style.overflow = '';
+            document.documentElement.style.overflow = '';
+        } else {
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+            if (menuIcon) menuIcon.className = 'fa-solid fa-xmark';
+            document.body.style.setProperty('overflow', 'hidden', 'important');
+            document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const userStr = localStorage.getItem('jewellry_user');
+        if (userStr) {
+            try {
+                const user = JSON.parse(userStr);
+                const initial = user.username.charAt(0).toUpperCase();
+                
+                const els = {
+                    'sidebar-ava': initial,
+                    'topbar-ava': initial,
+                    'sidebar-uname': user.username,
+                    'sidebar-uemail': user.email
+                };
+                
+                for (const [id, val] of Object.entries(els)) {
+                    const el = document.getElementById(id);
+                    if (el) el.innerText = val;
+                }
+                
+                const greetingName = document.getElementById('greeting-name');
+                if (greetingName) {
+                    const hour = new Date().getHours();
+                    const timeOfDay = hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening";
+                    greetingName.innerText = `Good ${timeOfDay}, ${user.username}! 👋`;
+                }
+                
+                const settingsName = document.getElementById('settings-name');
+                if (settingsName) settingsName.value = user.username;
+                
+                const settingsEmail = document.getElementById('settings-email');
+                if (settingsEmail) settingsEmail.value = user.email;
+            } catch (e) {
+                console.error('Error parsing user data', e);
+            }
+        }
+    });
+  </script>
+</body>
+</html>

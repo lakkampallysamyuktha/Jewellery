@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals | Premium Luxury Jewellery</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles.css?v=23">
+    <!-- New Arrivals CSS (Timeless Minimalism & Editorial) -->
+    <link rel="stylesheet" href="new-arrivals.css?v=25">
+</head>
+<body>
+    <!-- Luxury Loader -->
+    <div class="luxury-loader">
+        <div class="loader-content">
+            <h2 class="loader-logo">Stackly</h2>
+            <div class="loader-line"></div>
+        </div>
+    </div> 
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="logo"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+            </div>
+            
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                    <li><a href="new-arrivals.html" class="active">New Arrivals</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-right desktop-only">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="login.html" class="btn btn-secondary nav-btn">Login</a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button class="hamburger mobile-only" id="hamburger" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="mobile-link">Home</a></li>
+                <li><a href="collections.html" class="mobile-link">Collections</a></li>
+                <li><a href="new-arrivals.html" class="mobile-link active">New Arrivals</a></li>
+                <li><a href="about.html" class="mobile-link">About</a></li>
+                <li><a href="contact.html" class="mobile-link">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-actions">
+            <div class="mobile-icons">
+                <a href="404.html" class="icon-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></a>
+                <a href="404.html" class="icon-btn" aria-label="Cart"><i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+            <a href="login.html" class="btn btn-primary full-width">Login</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- SECTION 1: The Premiere Hero (Cinematic Minimalism) -->
+        <section class="na-hero-minimal">
+            <div class="na-hero-minimal-bg">
+                <img src="Images/image_48.webp" alt="The Dawn of Elegance">
+            </div>
+            <div class="na-hero-minimal-overlay"></div>
+            
+            <div class="na-hero-minimal-content">
+                <span class="luxury-tag" style="border-color: var(--clr-secondary); color: var(--clr-secondary); background-color: var(--clr-primary);">The Unveiling</span>
+                <h1>The Dawn of<br><i>Elegance</i></h1>
+                <div class="gold-divider-small centered"></div>
+                <p style="margin-top: 1.5rem; opacity: 0.9; font-size: clamp(1.1rem, 4vw, 1.25rem); line-height: 1.6;">A bold new chapter in luxury jewellery. Discover our latest masterpieces, forged from the finest materials known to man.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: The Masterpiece Grid (Clean Editorial) -->
+        <section class="na-minimal-grid-section">
+            <div class="container">
+                <div class="text-center" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="luxury-tag">Fresh Masterpieces</span>
+                    <h2 class="section-title text-primary">The Midnight Sun</h2>
+                    <div class="gold-divider-small centered"></div>
+                </div>
+
+                <div class="na-minimal-grid">
+                    <!-- Item 1 -->
+                    <div class="na-minimal-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="na-minimal-img-wrapper">
+                            <img src="Images/image_4.webp" alt="Solstice Solitaire">
+                        </div>
+                        <h3>Solstice Solitaire</h3>
+                        <div class="price">$ 45,000</div>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.6rem 2rem; font-size: 0.9rem;">Buy Now</a>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="na-minimal-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="na-minimal-img-wrapper">
+                            <img src="Images/image_18.webp" alt="Celestial Cascade">
+                        </div>
+                        <h3>Celestial Cascade</h3>
+                        <div class="price">$ 128,000</div>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.6rem 2rem; font-size: 0.9rem;">Buy Now</a>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="na-minimal-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="na-minimal-img-wrapper">
+                            <img src="Images/image_24.webp" alt="Emerald Twilight">
+                        </div>
+                        <h3>Emerald Twilight</h3>
+                        <div class="price">$ 85,000</div>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.6rem 2rem; font-size: 0.9rem;">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The Modern Muse (Classic Split Layout) -->
+        <section class="na-minimal-split">
+            <div class="na-split-img" data-aos="fade-right" data-aos-duration="1200">
+                <img src="Images/image_3.webp" alt="Editorial Look">
+            </div>
+            <div class="na-split-content" data-aos="fade-left" data-aos-duration="1200">
+                <span class="luxury-tag">Design Philosophy</span>
+                <h2 class="section-title text-primary" style="font-size: clamp(2.5rem, 8vw, 3.5rem); line-height: 1.1; margin-bottom: 1.5rem;">Crafted for the <br><i>Modern Muse</i></h2>
+                <div class="gold-divider"></div>
+                <p style="margin: 2rem 0; color: #444; line-height: 1.8; max-width: 500px;">The New Arrivals collection breaks away from traditional constraints, embracing bold, asymmetrical designs that reflect the dynamic spirit of contemporary luxury.</p>
+                <a href="404.html" class="btn btn-secondary">Discover The Inspiration</a>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Museum Display Lookbook -->
+        <section class="na-museum-display">
+            <div class="container">
+                <!-- Row 1 -->
+                <div class="museum-row">
+                    <div class="museum-img" data-aos="fade-up" data-aos-duration="1200">
+                        <img src="Images/image_6.webp" alt="Diamond Setting">
+                    </div>
+                    <div class="museum-text" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                        <span class="luxury-tag" style="border-color: var(--clr-secondary); color: var(--clr-white);">The Details</span>
+                        <h3>The Pavilion Setting</h3>
+                        <div class="gold-divider" style="margin-bottom: 1.5rem;"></div>
+                        <p style="opacity: 0.9; max-width: 400px;">Featuring our proprietary 12-prong secure setting that maximizes light return.</p>
+                        <p style="opacity: 0.9; max-width: 400px; margin-top: 1rem;">This exclusive design elevates the central gemstone, allowing it to draw in ambient light from all angles to create an unparalleled, mesmerizing brilliance that commands attention in any room.</p>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 2rem;">Explore The Setting</a>
+                    </div>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="museum-row">
+                    <div class="museum-img" data-aos="fade-up" data-aos-duration="1200">
+                        <img src="Images/image_49.webp" alt="Gold Bands">
+                    </div>
+                    <div class="museum-text" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+                        <span class="luxury-tag" style="border-color: var(--clr-secondary); color: var(--clr-white);">Materials</span>
+                        <h3>18k Rose Gold</h3>
+                        <div class="gold-divider" style="margin-bottom: 1.5rem;"></div>
+                        <p style="opacity: 0.9; max-width: 400px;">Sustainably sourced and masterfully alloyed for a warm, timeless glow.</p>
+                        <p style="opacity: 0.9; max-width: 400px; margin-top: 1rem;">Our signature 18k rose gold blend provides a romantic, vintage-inspired hue that beautifully complements all skin tones and perfectly highlights the pristine fire of the diamonds it holds.</p>
+                        <a href="404.html" class="btn btn-secondary" style="margin-top: 2rem;">Discover Our Materials</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: The Artisan's Whisper (Fixed Parallax) -->
+        <section class="na-artisan-parallax">
+            <div class="na-artisan-overlay"></div>
+            <div class="container na-artisan-content" data-aos="zoom-in" data-aos-duration="1500">
+                <h2>"Perfection is not a standard.<br>It is our starting point."</h2>
+                <div class="gold-divider-small centered" style="margin-top: 3rem;"></div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: The Vault (Cinematic Split Layout) -->
+        <section class="na-vault-split">
+            <div class="vault-img-side" data-aos="fade-right" data-aos-duration="1500">
+                <img src="Images/image_26.webp" alt="Imperial Ruby">
+            </div>
+            
+            <div class="vault-content-side" data-aos="fade-left" data-aos-duration="1500">
+                <span class="luxury-tag" style="border-color: var(--clr-secondary); color: var(--clr-secondary);">Extremely Limited</span>
+                <h2 class="section-title text-white" style="margin-top: 1rem; font-size: clamp(2.5rem, 8vw, 3.5rem);">The Imperial Ruby</h2>
+                <div class="gold-divider" style="margin-bottom: 2rem;"></div>
+                
+                <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem; max-width: 450px;">Only one piece exists in the world. Unveiling to our private clients in:</p>
+                
+                <div class="vault-split-countdown" id="vault-timer">
+                    <div class="vault-cd-unit"><span id="cd-days">03</span><span>Days</span></div>
+                    <div>:</div>
+                    <div class="vault-cd-unit"><span id="cd-hours">14</span><span>Hours</span></div>
+                    <div>:</div>
+                    <div class="vault-cd-unit"><span id="cd-mins">59</span><span>Mins</span></div>
+                    <div>:</div>
+                    <div class="vault-cd-unit"><span id="cd-secs">59</span><span>Secs</span></div>
+                </div>
+                
+                <a href="404.html" class="btn btn-secondary" style="margin-top: 1rem; max-width: 300px;">Request Private Viewing</a>
+            </div>
+        </section>
+
+        <!-- SECTION 7: The Curator's Note (Offset Layout) -->
+        <section class="na-curator-offset">
+            <div class="curator-offset-wrapper">
+                <div class="curator-img-side" data-aos="fade-up" data-aos-duration="1500">
+                    <img src="Images/image_47.webp" alt="The Collection Note">
+                </div>
+                
+                <div class="curator-text-side" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="300">
+                    <span class="luxury-tag">A Note from the Designer</span>
+                    <h2 class="section-title text-primary" style="margin-top: 1.5rem;">An Invitation</h2>
+                    <div class="gold-divider" style="margin-bottom: 2.5rem;"></div>
+                    <p>I designed this new collection for the woman who owns every room she walks into. It is bold, uncompromising, and deeply respectful of the heritage of fine jewellery.</p>
+                    <p>I invite you to explore these pieces not just as ornaments, but as extensions of your own brilliant legacy.</p>
+                    <div class="signature">Isabella Vance</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" style="margin-bottom: 0; display: inline-block;"><img src="logo-removebg-preview.webp" alt="Stackly" class="site-logo"></a>
+                    <p>Crafting timeless elegance and preserving the art of luxury jewellery since 1995.</p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="404.html" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                        </a>
+                        <a href="404.html" aria-label="YouTube">
+                            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="404.html">Bridal</a></li>
+                        <li><a href="404.html">Diamonds</a></li>
+                        <li><a href="404.html">Gold</a></li>
+                        <li><a href="404.html">Platinum</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="new-arrivals.html">New Arrivals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Shipping Policy</a></li>
+                        <li><a href="404.html">Returns & Exchange</a></li>
+                        <li><a href="404.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Stackly Luxury Jewellery. All rights reserved.</p>
+                <button id="back-to-top" aria-label="Back to top">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js?v=6"></script>
+    <script>
+        // Countdown Timer Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minsEl = document.getElementById('cd-mins');
+            const secsEl = document.getElementById('cd-secs');
+
+            if(daysEl && hoursEl && minsEl && secsEl) {
+                // Set the countdown date to 3 days, 14 hours, 59 minutes from now
+                const countDownDate = new Date().getTime() + (3 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (59 * 60 * 1000) + (59 * 1000);
+
+                const updateTimer = setInterval(() => {
+                    const now = new Date().getTime();
+                    const distance = countDownDate - now;
+
+                    if (distance < 0) {
+                        clearInterval(updateTimer);
+                        return;
+                    }
+
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    daysEl.innerText = days < 10 ? '0' + days : days;
+                    hoursEl.innerText = hours < 10 ? '0' + hours : hours;
+                    minsEl.innerText = minutes < 10 ? '0' + minutes : minutes;
+                    secsEl.innerText = seconds < 10 ? '0' + seconds : seconds;
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

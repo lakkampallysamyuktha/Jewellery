@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Jewellry Elegance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: #fdfbf7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: 'Manrope', sans-serif;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            z-index: 0;
+        }
+        .blob.b1 {
+            width: 400px;
+            height: 400px;
+            background: #C8A45D;
+            top: -100px;
+            left: -100px;
+            opacity: 0.15;
+        }
+        .blob.b2 {
+            width: 350px;
+            height: 350px;
+            background: #6D1F2F;
+            bottom: -100px;
+            right: -100px;
+            opacity: 0.08;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+        }
+
+        .error-code {
+            font-family: 'Playfair Display', serif;
+            font-size: 8rem;
+            font-weight: 700;
+            color: #6D1F2F;
+            margin: 0;
+            line-height: 1;
+            text-shadow: 0 10px 30px rgba(109,31,47,0.1);
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333333;
+            margin: 20px 0 10px 0;
+        }
+
+        .error-msg {
+            font-size: 1.1rem;
+            color: rgba(51,51,51,0.7);
+            margin-bottom: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: #6D1F2F;
+            color: #ffffff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(109,31,47,0.2);
+        }
+        .btn-home:hover {
+            background: #C8A45D;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(200,164,93,0.3);
+        }
+        
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            background: #ffffff;
+            color: #6D1F2F;
+            border: 1px solid rgba(109,31,47,0.2);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .btn-back:hover {
+            background: rgba(109,31,47,0.05);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+
+    <div class="error-container">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-msg">The exquisite piece you are looking for seems to be missing from our collection.</p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <button onclick="history.back()" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                Go Back
+            </button>
+            <a href="index.html" class="btn-home">
+                <i class="fa-solid fa-house"></i>
+                Return Home
+            </a>
+        </div>
+    </div>
+</body>
+</html>
