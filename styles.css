@@ -370,6 +370,15 @@ input, select, textarea {
     align-items: center;
     transform: translateY(-100%);
     transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    touch-action: none; /* Prevent scroll on overlay */
+}
+
+/* Scroll Lock Utility */
+body.no-scroll {
+    overflow: hidden !important;
+    height: 100vh !important;
+    position: fixed;
+    width: 100%;
 }
 
 .mobile-menu.active {

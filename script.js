@@ -88,15 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileMenu.classList.toggle("active");
         
         if (mobileMenu.classList.contains("active")) {
-            document.body.style.setProperty('overflow', 'hidden', 'important');
-            document.documentElement.style.setProperty('overflow', 'hidden', 'important');
+            document.body.classList.add("no-scroll");
             gsap.fromTo(".mobile-link", 
                 { y: 30, opacity: 0 }, 
                 { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, delay: 0.3 }
             );
         } else {
-            document.body.style.overflow = "";
-            document.documentElement.style.overflow = "";
+            document.body.classList.remove("no-scroll");
         }
     });
 
