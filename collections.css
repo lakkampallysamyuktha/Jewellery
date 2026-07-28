@@ -209,7 +209,7 @@
 }
 
 .material-card {
-    width: 280px;
+    width: 320px;
     flex-shrink: 0;
     border-radius: 20px;
     overflow: hidden;
@@ -218,7 +218,7 @@
 
 .material-card img {
     width: 100%;
-    height: 350px;
+    height: 420px;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -273,7 +273,7 @@
 
 .material-btn {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: auto;
     padding: 0.5rem 1.5rem;
     font-size: 0.85rem;
     opacity: 1;
